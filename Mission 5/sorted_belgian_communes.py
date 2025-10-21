@@ -300,9 +300,21 @@ def coordinate(commune,all_commune):
             else:
                 first=middle+1
 
+def test_coordinate():
+    if coordinate("Wuustwezel", all_communes)!=(613059.4971031006, 5694637.872002422):
+        print ("error")
+    else:
+        print("good")
+
 
 print(coordinate("Namur",all_communes))
 
+#pre : deux communes de la liste all_communes
+#post : retourne la distance euclidienne entre deux communes
 def distance(commune1,commune2,all_communes):
-    pass
+    coord1=coordinate(commune1, all_communes)
+    coord2=coordinate(commune2, all_communes)
+    distx=(coord2[0]-coord1[0])**2
+    disty=(coord2[1]-coord1[1])**2
+    return abs(distx+disty)
 
